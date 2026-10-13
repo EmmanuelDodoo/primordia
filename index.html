@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Primordia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><h1>Primordia</h1><span>RNA WORLD · CAMPAIGN 1</span></div>
+    <nav class="levels" id="levels" aria-label="Levels"></nav>
+  </header>
+
+  <section class="brief" id="brief"></section>
+
+  <section class="bench" aria-label="Strand builder">
+    <div class="bench-head"><h3>Your strand · 5′→3′</h3><div class="seqtext" id="seqtext"></div></div>
+    <canvas id="strand" aria-label="Diagram of your strand"></canvas>
+    <div class="stats" id="stats"></div>
+    <div class="keys" id="keys">
+      <button class="key" data-b="A" aria-label="Add A">A</button>
+      <button class="key" data-b="U" aria-label="Add U">U</button>
+      <button class="key" data-b="G" aria-label="Add G">G</button>
+      <button class="key" data-b="C" aria-label="Add C">C</button>
+      <button class="key util" id="back" aria-label="Delete last base">⌫</button>
+      <button class="key util" id="clear" aria-label="Clear strand">Clear</button>
+    </div>
+    <p class="valid" id="valid"></p>
+    <div class="row" id="membraneRow" hidden></div>
+    <div class="row" id="library"></div>
+  </section>
+
+  <section class="run" aria-label="Test run">
+    <div class="run-head">
+      <h3 id="runlabel">Test run</h3>
+      <div class="row">
+        <div class="speeds" id="speeds" role="group" aria-label="Speed"></div>
+        <button class="go" id="go">Run test</button>
+      </div>
+    </div>
+    <div class="view">
+      <div class="view-bar"><span><span id="tick">tick 0 / 400</span> <span class="mode" id="mode" hidden></span></span><span class="legend" id="legend"></span></div>
+      <canvas id="pool" aria-label="Pool view"></canvas>
+      <canvas id="chart" aria-label="Population over time"></canvas>
+    </div>
+    <div id="result" hidden></div>
+  </section>
+
+  <section class="roadmap">
+    <div class="eyebrow">Campaign map</div>
+    <ol id="roadmap"></ol>
+  </section>
+  <div class="foot"><span>Game chemistry is simplified and partly invented. Real abiogenesis is still an open question.</span><button class="link" id="unlockAll">Unlock all levels</button></div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
